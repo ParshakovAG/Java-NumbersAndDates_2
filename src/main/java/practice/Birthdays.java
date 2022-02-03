@@ -1,23 +1,39 @@
 package practice;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class Birthdays {
 
     public static void main(String[] args) {
 
-        int day = 31;
-        int month = 12;
-        int year = 1990;
+        int day = 27;
+        int month = 4;
+        int year = 1985;
 
-        System.out.println(collectBirthdays(year, month, day));
+        //System.out.println(collectBirthdays(year, month, day));
 
     }
 
     public static String collectBirthdays(int year, int month, int day) {
 
+        String birthday = "";
+        LocalDate date = LocalDate.of(year, month, day);
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern
+                ("dd.MM.yyyy - E").localizedBy(new Locale("us"));
+
+        for (int i = 0; date.isBefore(today) || date.isEqual(today);
+             date = date.plusYears(1)) {
+           birthday =  i++ + " - " + formatter.format(date) + System.lineSeparator();
+        }
+
         //TODO реализуйте метод для построения строки в следующем виде
         //0 - 31.12.1990 - Mon
         //1 - 31.12.1991 - Tue
-        
-        return "";
+
+        return birthday;
     }
 }

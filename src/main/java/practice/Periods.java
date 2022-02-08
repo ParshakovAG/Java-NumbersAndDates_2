@@ -28,8 +28,7 @@ public class Periods {
 
         StringBuilder df = new  StringBuilder(text);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("years: , months: , days: ");
-        df = df.append(" - " + formatter.format(today) + System.lineSeparator());
-        System.out.println(df);
+        //df = df.append(" - " + formatter.format(today) + System.lineSeparator());
 
         return text.toString();
     }

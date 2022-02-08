@@ -8,9 +8,9 @@ public class Birthdays {
 
     public static void main(String[] args) {
 
-        int day = 27;
-        int month = 4;
-        int year = 1985;
+        int day = 1;
+        int month = 1;
+        int year = 1970;
 
         System.out.println(collectBirthdays(year, month, day));
     }

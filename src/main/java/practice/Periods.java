@@ -15,7 +15,7 @@ public class Periods {
 //        System.out.print("years:" + javaYear.until(today, ChronoUnit.YEARS) + ", ");
 //        System.out.print("months:" +javaYear.until(today, ChronoUnit.MONTHS) + ", ");
 //        System.out.print("days:" + javaYear.until(today, ChronoUnit.DAYS));
-        System.out.println(dif);
+        System.out.println(getPeriodFromBirthday(javaYear, today));
     }
     // реализуйте вывод разницы между датами, используя класс Period
     public static String getPeriodFromBirthday(LocalDate firstDate, LocalDate secondDate) {
@@ -27,8 +27,9 @@ public class Periods {
         Period dif = Period.between(javaYear, today);
 
         StringBuilder df = new  StringBuilder(text);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("years: , months: , days: ");
-        //df = df.append(" - " + formatter.format(today) + System.lineSeparator());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy: MM: dd:");
+        df = df.append(" - " + formatter.format(today) + System.lineSeparator());
+        System.out.println(df);
 
         return text.toString();
     }

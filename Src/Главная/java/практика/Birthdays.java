@@ -16,6 +16,10 @@ public class Birthdays {
     }
     public static String collectBirthdays(int year, int month, int day) {
 
+        //TODO реализуйте метод для построения строки в следующем виде
+        //0 - 31.12.1990 - Mon
+        //1 - 31.12.1991 - Tue
+
         String birthday = "";
         LocalDate date = LocalDate.of(year, month, day);
         LocalDate today = LocalDate.now();
@@ -27,10 +31,7 @@ public class Birthdays {
              date = date.plusYears(1)) {
             birth = birth.append(i++ + " - " + formatter.format(date) + System.lineSeparator());
         }
-        //TODO реализуйте метод для построения строки в следующем виде
-        //0 - 31.12.1990 - Mon
-        //1 - 31.12.1991 - Tue
-
+        
         return birth.toString();
     }
 }
